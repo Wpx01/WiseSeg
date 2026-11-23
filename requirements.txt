@@ -1,0 +1,8 @@
+# Install the CPU or CUDA build of PyTorch first; see README.md.
+# These pins define the release inference environment, not the historical training environment.
+torch==2.6.0
+monai==1.4.0
+numpy==1.26.4
+nibabel==5.3.2
+SimpleITK==2.4.1
+tqdm==4.67.1

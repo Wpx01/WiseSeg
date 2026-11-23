@@ -1,0 +1,1702 @@
+{
+  "schema_version": 1,
+  "model_name": "WiseSeg",
+  "anatomical_structures": 147,
+  "foreground_labels": 146,
+  "background_label": 0,
+  "resize_shape": [
+    512,
+    512,
+    448
+  ],
+  "shared_label": {
+    "id": 138,
+    "name": "prostate_or_uterus",
+    "description": "One sex-specific class. The model does not predict separate prostate and uterus IDs or infer patient sex."
+  },
+  "groups": [
+    {
+      "name": "G1",
+      "patch_size": [
+        256,
+        256,
+        128
+      ],
+      "threshold_low": 8.0,
+      "threshold_high": 1027.0,
+      "norm_sub": 299.42,
+      "norm_div": 193.56,
+      "unet_params": {
+        "out_channels": 25,
+        "channels": [
+          4,
+          8,
+          16,
+          32,
+          64
+        ],
+        "strides": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "num_res_units": 2,
+        "dropout": 0.1
+      },
+      "sw_overlap": 0.5,
+      "sw_batch_size": 2,
+      "num_labels": 24,
+      "anatomical_structure_count": 24,
+      "label_offset": 0,
+      "paper_group": "G1",
+      "weights_file": "G1_best_metric_model.pth",
+      "weights_size_bytes": 1322866,
+      "weights_sha256": "806edd85a3d7de2d81c3ad04f10030a6ab9494e24b9cde7629448fe1502c5e1d"
+    },
+    {
+      "name": "G2",
+      "patch_size": [
+        256,
+        256,
+        128
+      ],
+      "threshold_low": -23.0,
+      "threshold_high": 863.0,
+      "norm_sub": 301.49,
+      "norm_div": 175.73,
+      "unet_params": {
+        "out_channels": 25,
+        "channels": [
+          4,
+          8,
+          16,
+          32,
+          64,
+          128
+        ],
+        "strides": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "num_res_units": 4,
+        "dropout": 0.1
+      },
+      "sw_overlap": 0.5,
+      "sw_batch_size": 2,
+      "num_labels": 24,
+      "anatomical_structure_count": 24,
+      "label_offset": 24,
+      "paper_group": "G2",
+      "weights_file": "G2_best_metric_model.pth",
+      "weights_size_bytes": 9689821,
+      "weights_sha256": "cd0e0fde5079a3ece23f8479ca22f217fda4f1a71a643706ac5f2d76b056d805"
+    },
+    {
+      "name": "G3",
+      "patch_size": [
+        256,
+        256,
+        128
+      ],
+      "threshold_low": -86.0,
+      "threshold_high": 1499.0,
+      "norm_sub": 212.21,
+      "norm_div": 328.92,
+      "unet_params": {
+        "out_channels": 25,
+        "channels": [
+          4,
+          8,
+          16,
+          32,
+          64
+        ],
+        "strides": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "num_res_units": 2,
+        "dropout": 0.1
+      },
+      "sw_overlap": 0.5,
+      "sw_batch_size": 2,
+      "num_labels": 24,
+      "anatomical_structure_count": 24,
+      "label_offset": 48,
+      "paper_group": "G3",
+      "weights_file": "G3_best_metric_model.pth",
+      "weights_size_bytes": 1322866,
+      "weights_sha256": "e30abf26cb68105d1b8f29b74074d2489e6d64533776683181887635e64de845"
+    },
+    {
+      "name": "G4_1",
+      "patch_size": [
+        256,
+        256,
+        128
+      ],
+      "threshold_low": -990.0,
+      "threshold_high": 76.0,
+      "norm_sub": -31.53,
+      "norm_div": 200.7,
+      "unet_params": {
+        "out_channels": 14,
+        "channels": [
+          4,
+          8,
+          16,
+          32,
+          64,
+          128
+        ],
+        "strides": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "num_res_units": 4,
+        "dropout": 0.1
+      },
+      "sw_overlap": 0.7,
+      "sw_batch_size": 2,
+      "num_labels": 13,
+      "anatomical_structure_count": 13,
+      "label_offset": 72,
+      "paper_group": "G4_1",
+      "weights_file": "G4_1_best_metric_model.pth",
+      "weights_size_bytes": 9634013,
+      "weights_sha256": "c591dbb209626ee43c3aaaaef70533bff6470de69fa89d6ac46f5c841b4ce34f"
+    },
+    {
+      "name": "G4_2",
+      "patch_size": [
+        256,
+        256,
+        128
+      ],
+      "threshold_low": -946.0,
+      "threshold_high": 92.0,
+      "norm_sub": -519.78,
+      "norm_div": 361.34,
+      "unet_params": {
+        "out_channels": 11,
+        "channels": [
+          4,
+          8,
+          16,
+          32,
+          64,
+          128
+        ],
+        "strides": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "num_res_units": 4,
+        "dropout": 0.1
+      },
+      "sw_overlap": 0.5,
+      "sw_batch_size": 2,
+      "num_labels": 10,
+      "anatomical_structure_count": 10,
+      "label_offset": 85,
+      "paper_group": "G4_2",
+      "weights_file": "G4_2_best_metric_model.pth",
+      "weights_size_bytes": 9623197,
+      "weights_sha256": "9a65a5acd41e65a4536eac0b594f2e67f9db1362469bd5f114dbd2ebb2696800"
+    },
+    {
+      "name": "G5_LR",
+      "patch_size": [
+        256,
+        256,
+        128
+      ],
+      "threshold_low": -40.0,
+      "threshold_high": 227.0,
+      "norm_sub": 37.623,
+      "norm_div": 42.989,
+      "unet_params": {
+        "out_channels": 11,
+        "channels": [
+          4,
+          8,
+          16,
+          32,
+          64,
+          128
+        ],
+        "strides": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "num_res_units": 4,
+        "dropout": 0.1
+      },
+      "sw_overlap": 0.7,
+      "sw_batch_size": 2,
+      "num_labels": 10,
+      "anatomical_structure_count": 10,
+      "label_offset": 95,
+      "paper_group": "G5_1",
+      "weights_file": "G5_LR_best_metric_model.pth",
+      "weights_size_bytes": 9623197,
+      "weights_sha256": "85db6a46c090c839653a78d96d56ded0c7bd4e91dc7b78561cfd927e23918068"
+    },
+    {
+      "name": "G5_NoLR",
+      "patch_size": [
+        256,
+        256,
+        128
+      ],
+      "threshold_low": -224.0,
+      "threshold_high": 81.0,
+      "norm_sub": 27.98,
+      "norm_div": 63.44,
+      "unet_params": {
+        "out_channels": 14,
+        "channels": [
+          4,
+          8,
+          16,
+          32,
+          64
+        ],
+        "strides": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "num_res_units": 2,
+        "dropout": 0.1
+      },
+      "sw_overlap": 0.5,
+      "sw_batch_size": 2,
+      "num_labels": 13,
+      "anatomical_structure_count": 13,
+      "label_offset": 105,
+      "paper_group": "G5_2",
+      "weights_file": "G5_NoLR_best_metric_model.pth",
+      "weights_size_bytes": 1267058,
+      "weights_sha256": "5670cbaf82cf7dc502774b5f593e6a02082effaf814ca7b7e10177fb45b6cc4e"
+    },
+    {
+      "name": "G6",
+      "patch_size": [
+        256,
+        256,
+        128
+      ],
+      "threshold_low": -132.0,
+      "threshold_high": 1547.0,
+      "norm_sub": 213.018,
+      "norm_div": 394.37,
+      "unet_params": {
+        "out_channels": 20,
+        "channels": [
+          4,
+          8,
+          16,
+          32,
+          64
+        ],
+        "strides": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "num_res_units": 2,
+        "dropout": 0.1
+      },
+      "sw_overlap": 0.5,
+      "sw_batch_size": 2,
+      "num_labels": 19,
+      "anatomical_structure_count": 19,
+      "label_offset": 118,
+      "paper_group": "G6",
+      "weights_file": "G6_best_metric_model.pth",
+      "weights_size_bytes": 1294322,
+      "weights_sha256": "bbc394c9972285fecbe8695be4f8671112c6019abb988d43f2afbe1621480455"
+    },
+    {
+      "name": "G7",
+      "patch_size": [
+        192,
+        192,
+        128
+      ],
+      "threshold_low": -83.0,
+      "threshold_high": 101.0,
+      "norm_sub": 33.95,
+      "norm_div": 41.03,
+      "unet_params": {
+        "out_channels": 10,
+        "channels": [
+          4,
+          8,
+          16,
+          32,
+          64
+        ],
+        "strides": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "num_res_units": 2,
+        "dropout": 0.1
+      },
+      "sw_overlap": 0.5,
+      "sw_batch_size": 4,
+      "num_labels": 9,
+      "anatomical_structure_count": 10,
+      "label_offset": 137,
+      "paper_group": "G7",
+      "weights_file": "G7_best_metric_model.pth",
+      "weights_size_bytes": 1253106,
+      "weights_sha256": "f2cb8c9dbcbf52cc5d457b166bf451c0f83df32edfe98f9971ea6ba9d34e666d"
+    }
+  ],
+  "labels": [
+    {
+      "id": 0,
+      "name": "background",
+      "group": null,
+      "local_id": 0,
+      "anatomical_names": []
+    },
+    {
+      "id": 1,
+      "name": "vertebrae_C1",
+      "group": "G1",
+      "local_id": 1,
+      "anatomical_names": [
+        "vertebrae_C1"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "vertebrae_C2",
+      "group": "G1",
+      "local_id": 2,
+      "anatomical_names": [
+        "vertebrae_C2"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "vertebrae_C3",
+      "group": "G1",
+      "local_id": 3,
+      "anatomical_names": [
+        "vertebrae_C3"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "vertebrae_C4",
+      "group": "G1",
+      "local_id": 4,
+      "anatomical_names": [
+        "vertebrae_C4"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "vertebrae_C5",
+      "group": "G1",
+      "local_id": 5,
+      "anatomical_names": [
+        "vertebrae_C5"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "vertebrae_C6",
+      "group": "G1",
+      "local_id": 6,
+      "anatomical_names": [
+        "vertebrae_C6"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "vertebrae_C7",
+      "group": "G1",
+      "local_id": 7,
+      "anatomical_names": [
+        "vertebrae_C7"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "vertebrae_T1",
+      "group": "G1",
+      "local_id": 8,
+      "anatomical_names": [
+        "vertebrae_T1"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "vertebrae_T2",
+      "group": "G1",
+      "local_id": 9,
+      "anatomical_names": [
+        "vertebrae_T2"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "vertebrae_T3",
+      "group": "G1",
+      "local_id": 10,
+      "anatomical_names": [
+        "vertebrae_T3"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "vertebrae_T4",
+      "group": "G1",
+      "local_id": 11,
+      "anatomical_names": [
+        "vertebrae_T4"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "vertebrae_T5",
+      "group": "G1",
+      "local_id": 12,
+      "anatomical_names": [
+        "vertebrae_T5"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "vertebrae_T6",
+      "group": "G1",
+      "local_id": 13,
+      "anatomical_names": [
+        "vertebrae_T6"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "vertebrae_T7",
+      "group": "G1",
+      "local_id": 14,
+      "anatomical_names": [
+        "vertebrae_T7"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "vertebrae_T8",
+      "group": "G1",
+      "local_id": 15,
+      "anatomical_names": [
+        "vertebrae_T8"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "vertebrae_T9",
+      "group": "G1",
+      "local_id": 16,
+      "anatomical_names": [
+        "vertebrae_T9"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "vertebrae_T10",
+      "group": "G1",
+      "local_id": 17,
+      "anatomical_names": [
+        "vertebrae_T10"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "vertebrae_T11",
+      "group": "G1",
+      "local_id": 18,
+      "anatomical_names": [
+        "vertebrae_T11"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "vertebrae_T12",
+      "group": "G1",
+      "local_id": 19,
+      "anatomical_names": [
+        "vertebrae_T12"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "vertebrae_L1",
+      "group": "G1",
+      "local_id": 20,
+      "anatomical_names": [
+        "vertebrae_L1"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "vertebrae_L2",
+      "group": "G1",
+      "local_id": 21,
+      "anatomical_names": [
+        "vertebrae_L2"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "vertebrae_L3",
+      "group": "G1",
+      "local_id": 22,
+      "anatomical_names": [
+        "vertebrae_L3"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "vertebrae_L4",
+      "group": "G1",
+      "local_id": 23,
+      "anatomical_names": [
+        "vertebrae_L4"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "vertebrae_L5",
+      "group": "G1",
+      "local_id": 24,
+      "anatomical_names": [
+        "vertebrae_L5"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "rib_right_1",
+      "group": "G2",
+      "local_id": 1,
+      "anatomical_names": [
+        "rib_right_1"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "rib_right_2",
+      "group": "G2",
+      "local_id": 2,
+      "anatomical_names": [
+        "rib_right_2"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "rib_right_3",
+      "group": "G2",
+      "local_id": 3,
+      "anatomical_names": [
+        "rib_right_3"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "rib_right_4",
+      "group": "G2",
+      "local_id": 4,
+      "anatomical_names": [
+        "rib_right_4"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "rib_right_5",
+      "group": "G2",
+      "local_id": 5,
+      "anatomical_names": [
+        "rib_right_5"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "rib_right_6",
+      "group": "G2",
+      "local_id": 6,
+      "anatomical_names": [
+        "rib_right_6"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "rib_right_7",
+      "group": "G2",
+      "local_id": 7,
+      "anatomical_names": [
+        "rib_right_7"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "rib_right_8",
+      "group": "G2",
+      "local_id": 8,
+      "anatomical_names": [
+        "rib_right_8"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "rib_right_9",
+      "group": "G2",
+      "local_id": 9,
+      "anatomical_names": [
+        "rib_right_9"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "rib_right_10",
+      "group": "G2",
+      "local_id": 10,
+      "anatomical_names": [
+        "rib_right_10"
+      ]
+    },
+    {
+      "id": 35,
+      "name": "rib_right_11",
+      "group": "G2",
+      "local_id": 11,
+      "anatomical_names": [
+        "rib_right_11"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "rib_right_12",
+      "group": "G2",
+      "local_id": 12,
+      "anatomical_names": [
+        "rib_right_12"
+      ]
+    },
+    {
+      "id": 37,
+      "name": "rib_left_1",
+      "group": "G2",
+      "local_id": 13,
+      "anatomical_names": [
+        "rib_left_1"
+      ]
+    },
+    {
+      "id": 38,
+      "name": "rib_left_2",
+      "group": "G2",
+      "local_id": 14,
+      "anatomical_names": [
+        "rib_left_2"
+      ]
+    },
+    {
+      "id": 39,
+      "name": "rib_left_3",
+      "group": "G2",
+      "local_id": 15,
+      "anatomical_names": [
+        "rib_left_3"
+      ]
+    },
+    {
+      "id": 40,
+      "name": "rib_left_4",
+      "group": "G2",
+      "local_id": 16,
+      "anatomical_names": [
+        "rib_left_4"
+      ]
+    },
+    {
+      "id": 41,
+      "name": "rib_left_5",
+      "group": "G2",
+      "local_id": 17,
+      "anatomical_names": [
+        "rib_left_5"
+      ]
+    },
+    {
+      "id": 42,
+      "name": "rib_left_6",
+      "group": "G2",
+      "local_id": 18,
+      "anatomical_names": [
+        "rib_left_6"
+      ]
+    },
+    {
+      "id": 43,
+      "name": "rib_left_7",
+      "group": "G2",
+      "local_id": 19,
+      "anatomical_names": [
+        "rib_left_7"
+      ]
+    },
+    {
+      "id": 44,
+      "name": "rib_left_8",
+      "group": "G2",
+      "local_id": 20,
+      "anatomical_names": [
+        "rib_left_8"
+      ]
+    },
+    {
+      "id": 45,
+      "name": "rib_left_9",
+      "group": "G2",
+      "local_id": 21,
+      "anatomical_names": [
+        "rib_left_9"
+      ]
+    },
+    {
+      "id": 46,
+      "name": "rib_left_10",
+      "group": "G2",
+      "local_id": 22,
+      "anatomical_names": [
+        "rib_left_10"
+      ]
+    },
+    {
+      "id": 47,
+      "name": "rib_left_11",
+      "group": "G2",
+      "local_id": 23,
+      "anatomical_names": [
+        "rib_left_11"
+      ]
+    },
+    {
+      "id": 48,
+      "name": "rib_left_12",
+      "group": "G2",
+      "local_id": 24,
+      "anatomical_names": [
+        "rib_left_12"
+      ]
+    },
+    {
+      "id": 49,
+      "name": "skull",
+      "group": "G3",
+      "local_id": 1,
+      "anatomical_names": [
+        "skull"
+      ]
+    },
+    {
+      "id": 50,
+      "name": "sternum",
+      "group": "G3",
+      "local_id": 2,
+      "anatomical_names": [
+        "sternum"
+      ]
+    },
+    {
+      "id": 51,
+      "name": "clavicle_right",
+      "group": "G3",
+      "local_id": 3,
+      "anatomical_names": [
+        "clavicle_right"
+      ]
+    },
+    {
+      "id": 52,
+      "name": "clavicle_left",
+      "group": "G3",
+      "local_id": 4,
+      "anatomical_names": [
+        "clavicle_left"
+      ]
+    },
+    {
+      "id": 53,
+      "name": "scapula_right",
+      "group": "G3",
+      "local_id": 5,
+      "anatomical_names": [
+        "scapula_right"
+      ]
+    },
+    {
+      "id": 54,
+      "name": "scapula_left",
+      "group": "G3",
+      "local_id": 6,
+      "anatomical_names": [
+        "scapula_left"
+      ]
+    },
+    {
+      "id": 55,
+      "name": "costal_cartilage",
+      "group": "G3",
+      "local_id": 7,
+      "anatomical_names": [
+        "costal_cartilage"
+      ]
+    },
+    {
+      "id": 56,
+      "name": "sacrum",
+      "group": "G3",
+      "local_id": 8,
+      "anatomical_names": [
+        "sacrum"
+      ]
+    },
+    {
+      "id": 57,
+      "name": "humerus_right",
+      "group": "G3",
+      "local_id": 9,
+      "anatomical_names": [
+        "humerus_right"
+      ]
+    },
+    {
+      "id": 58,
+      "name": "humerus_left",
+      "group": "G3",
+      "local_id": 10,
+      "anatomical_names": [
+        "humerus_left"
+      ]
+    },
+    {
+      "id": 59,
+      "name": "femur_right",
+      "group": "G3",
+      "local_id": 11,
+      "anatomical_names": [
+        "femur_right"
+      ]
+    },
+    {
+      "id": 60,
+      "name": "femur_left",
+      "group": "G3",
+      "local_id": 12,
+      "anatomical_names": [
+        "femur_left"
+      ]
+    },
+    {
+      "id": 61,
+      "name": "pelvic_bone_right",
+      "group": "G3",
+      "local_id": 13,
+      "anatomical_names": [
+        "pelvic_bone_right"
+      ]
+    },
+    {
+      "id": 62,
+      "name": "pelvic_bone_left",
+      "group": "G3",
+      "local_id": 14,
+      "anatomical_names": [
+        "pelvic_bone_left"
+      ]
+    },
+    {
+      "id": 63,
+      "name": "gluteus_maximus_right",
+      "group": "G3",
+      "local_id": 15,
+      "anatomical_names": [
+        "gluteus_maximus_right"
+      ]
+    },
+    {
+      "id": 64,
+      "name": "gluteus_maximus_left",
+      "group": "G3",
+      "local_id": 16,
+      "anatomical_names": [
+        "gluteus_maximus_left"
+      ]
+    },
+    {
+      "id": 65,
+      "name": "gluteus_medius_right",
+      "group": "G3",
+      "local_id": 17,
+      "anatomical_names": [
+        "gluteus_medius_right"
+      ]
+    },
+    {
+      "id": 66,
+      "name": "gluteus_medius_left",
+      "group": "G3",
+      "local_id": 18,
+      "anatomical_names": [
+        "gluteus_medius_left"
+      ]
+    },
+    {
+      "id": 67,
+      "name": "gluteus_minimus_right",
+      "group": "G3",
+      "local_id": 19,
+      "anatomical_names": [
+        "gluteus_minimus_right"
+      ]
+    },
+    {
+      "id": 68,
+      "name": "gluteus_minimus_left",
+      "group": "G3",
+      "local_id": 20,
+      "anatomical_names": [
+        "gluteus_minimus_left"
+      ]
+    },
+    {
+      "id": 69,
+      "name": "erector_spinae_right",
+      "group": "G3",
+      "local_id": 21,
+      "anatomical_names": [
+        "erector_spinae_right"
+      ]
+    },
+    {
+      "id": 70,
+      "name": "erector_spinae_left",
+      "group": "G3",
+      "local_id": 22,
+      "anatomical_names": [
+        "erector_spinae_left"
+      ]
+    },
+    {
+      "id": 71,
+      "name": "iliopsoas_right",
+      "group": "G3",
+      "local_id": 23,
+      "anatomical_names": [
+        "iliopsoas_right"
+      ]
+    },
+    {
+      "id": 72,
+      "name": "iliopsoas_left",
+      "group": "G3",
+      "local_id": 24,
+      "anatomical_names": [
+        "iliopsoas_left"
+      ]
+    },
+    {
+      "id": 73,
+      "name": "stomach",
+      "group": "G4_1",
+      "local_id": 1,
+      "anatomical_names": [
+        "stomach"
+      ]
+    },
+    {
+      "id": 74,
+      "name": "liver",
+      "group": "G4_1",
+      "local_id": 2,
+      "anatomical_names": [
+        "liver"
+      ]
+    },
+    {
+      "id": 75,
+      "name": "gallbladder",
+      "group": "G4_1",
+      "local_id": 3,
+      "anatomical_names": [
+        "gallbladder"
+      ]
+    },
+    {
+      "id": 76,
+      "name": "pancreas",
+      "group": "G4_1",
+      "local_id": 4,
+      "anatomical_names": [
+        "pancreas"
+      ]
+    },
+    {
+      "id": 77,
+      "name": "duodenum",
+      "group": "G4_1",
+      "local_id": 5,
+      "anatomical_names": [
+        "duodenum"
+      ]
+    },
+    {
+      "id": 78,
+      "name": "small_intestine",
+      "group": "G4_1",
+      "local_id": 6,
+      "anatomical_names": [
+        "small_intestine"
+      ]
+    },
+    {
+      "id": 79,
+      "name": "large_intestine",
+      "group": "G4_1",
+      "local_id": 7,
+      "anatomical_names": [
+        "large_intestine"
+      ]
+    },
+    {
+      "id": 80,
+      "name": "kidney_left",
+      "group": "G4_1",
+      "local_id": 8,
+      "anatomical_names": [
+        "kidney_left"
+      ]
+    },
+    {
+      "id": 81,
+      "name": "kidney_right",
+      "group": "G4_1",
+      "local_id": 9,
+      "anatomical_names": [
+        "kidney_right"
+      ]
+    },
+    {
+      "id": 82,
+      "name": "urinary_bladder",
+      "group": "G4_1",
+      "local_id": 10,
+      "anatomical_names": [
+        "urinary_bladder"
+      ]
+    },
+    {
+      "id": 83,
+      "name": "adrenal_gland_left",
+      "group": "G4_1",
+      "local_id": 11,
+      "anatomical_names": [
+        "adrenal_gland_left"
+      ]
+    },
+    {
+      "id": 84,
+      "name": "adrenal_gland_right",
+      "group": "G4_1",
+      "local_id": 12,
+      "anatomical_names": [
+        "adrenal_gland_right"
+      ]
+    },
+    {
+      "id": 85,
+      "name": "spleen",
+      "group": "G4_1",
+      "local_id": 13,
+      "anatomical_names": [
+        "spleen"
+      ]
+    },
+    {
+      "id": 86,
+      "name": "esophagus",
+      "group": "G4_2",
+      "local_id": 1,
+      "anatomical_names": [
+        "esophagus"
+      ]
+    },
+    {
+      "id": 87,
+      "name": "lung_upper_lobe_left",
+      "group": "G4_2",
+      "local_id": 2,
+      "anatomical_names": [
+        "lung_upper_lobe_left"
+      ]
+    },
+    {
+      "id": 88,
+      "name": "lung_upper_lobe_right",
+      "group": "G4_2",
+      "local_id": 3,
+      "anatomical_names": [
+        "lung_upper_lobe_right"
+      ]
+    },
+    {
+      "id": 89,
+      "name": "lung_lower_lobe_left",
+      "group": "G4_2",
+      "local_id": 4,
+      "anatomical_names": [
+        "lung_lower_lobe_left"
+      ]
+    },
+    {
+      "id": 90,
+      "name": "lung_middle_lobe_right",
+      "group": "G4_2",
+      "local_id": 5,
+      "anatomical_names": [
+        "lung_middle_lobe_right"
+      ]
+    },
+    {
+      "id": 91,
+      "name": "lung_lower_lobe_right",
+      "group": "G4_2",
+      "local_id": 6,
+      "anatomical_names": [
+        "lung_lower_lobe_right"
+      ]
+    },
+    {
+      "id": 92,
+      "name": "trachea",
+      "group": "G4_2",
+      "local_id": 7,
+      "anatomical_names": [
+        "trachea"
+      ]
+    },
+    {
+      "id": 93,
+      "name": "thyroid",
+      "group": "G4_2",
+      "local_id": 8,
+      "anatomical_names": [
+        "thyroid"
+      ]
+    },
+    {
+      "id": 94,
+      "name": "brain",
+      "group": "G4_2",
+      "local_id": 9,
+      "anatomical_names": [
+        "brain"
+      ]
+    },
+    {
+      "id": 95,
+      "name": "spinal_cord",
+      "group": "G4_2",
+      "local_id": 10,
+      "anatomical_names": [
+        "spinal_cord"
+      ]
+    },
+    {
+      "id": 96,
+      "name": "common_carotid_artery_left",
+      "group": "G5_LR",
+      "local_id": 1,
+      "anatomical_names": [
+        "common_carotid_artery_left"
+      ]
+    },
+    {
+      "id": 97,
+      "name": "common_carotid_artery_right",
+      "group": "G5_LR",
+      "local_id": 2,
+      "anatomical_names": [
+        "common_carotid_artery_right"
+      ]
+    },
+    {
+      "id": 98,
+      "name": "subclavian_artery_left",
+      "group": "G5_LR",
+      "local_id": 3,
+      "anatomical_names": [
+        "subclavian_artery_left"
+      ]
+    },
+    {
+      "id": 99,
+      "name": "subclavian_artery_right",
+      "group": "G5_LR",
+      "local_id": 4,
+      "anatomical_names": [
+        "subclavian_artery_right"
+      ]
+    },
+    {
+      "id": 100,
+      "name": "common_iliac_artery_left",
+      "group": "G5_LR",
+      "local_id": 5,
+      "anatomical_names": [
+        "common_iliac_artery_left"
+      ]
+    },
+    {
+      "id": 101,
+      "name": "common_iliac_artery_right",
+      "group": "G5_LR",
+      "local_id": 6,
+      "anatomical_names": [
+        "common_iliac_artery_right"
+      ]
+    },
+    {
+      "id": 102,
+      "name": "brachiocephalic_vein_left",
+      "group": "G5_LR",
+      "local_id": 7,
+      "anatomical_names": [
+        "brachiocephalic_vein_left"
+      ]
+    },
+    {
+      "id": 103,
+      "name": "brachiocephalic_vein_right",
+      "group": "G5_LR",
+      "local_id": 8,
+      "anatomical_names": [
+        "brachiocephalic_vein_right"
+      ]
+    },
+    {
+      "id": 104,
+      "name": "common_iliac_vein_left",
+      "group": "G5_LR",
+      "local_id": 9,
+      "anatomical_names": [
+        "common_iliac_vein_left"
+      ]
+    },
+    {
+      "id": 105,
+      "name": "common_iliac_vein_right",
+      "group": "G5_LR",
+      "local_id": 10,
+      "anatomical_names": [
+        "common_iliac_vein_right"
+      ]
+    },
+    {
+      "id": 106,
+      "name": "myocardium",
+      "group": "G5_NoLR",
+      "local_id": 1,
+      "anatomical_names": [
+        "myocardium"
+      ]
+    },
+    {
+      "id": 107,
+      "name": "atrium_left",
+      "group": "G5_NoLR",
+      "local_id": 2,
+      "anatomical_names": [
+        "atrium_left"
+      ]
+    },
+    {
+      "id": 108,
+      "name": "atrium_right",
+      "group": "G5_NoLR",
+      "local_id": 3,
+      "anatomical_names": [
+        "atrium_right"
+      ]
+    },
+    {
+      "id": 109,
+      "name": "ventricle_left",
+      "group": "G5_NoLR",
+      "local_id": 4,
+      "anatomical_names": [
+        "ventricle_left"
+      ]
+    },
+    {
+      "id": 110,
+      "name": "ventricle_right",
+      "group": "G5_NoLR",
+      "local_id": 5,
+      "anatomical_names": [
+        "ventricle_right"
+      ]
+    },
+    {
+      "id": 111,
+      "name": "pulmonary_artery",
+      "group": "G5_NoLR",
+      "local_id": 6,
+      "anatomical_names": [
+        "pulmonary_artery"
+      ]
+    },
+    {
+      "id": 112,
+      "name": "left_atrial_appendage",
+      "group": "G5_NoLR",
+      "local_id": 7,
+      "anatomical_names": [
+        "left_atrial_appendage"
+      ]
+    },
+    {
+      "id": 113,
+      "name": "aorta",
+      "group": "G5_NoLR",
+      "local_id": 8,
+      "anatomical_names": [
+        "aorta"
+      ]
+    },
+    {
+      "id": 114,
+      "name": "brachiocephalic_trunk",
+      "group": "G5_NoLR",
+      "local_id": 9,
+      "anatomical_names": [
+        "brachiocephalic_trunk"
+      ]
+    },
+    {
+      "id": 115,
+      "name": "superior_vena_cava",
+      "group": "G5_NoLR",
+      "local_id": 10,
+      "anatomical_names": [
+        "superior_vena_cava"
+      ]
+    },
+    {
+      "id": 116,
+      "name": "inferior_vena_cava",
+      "group": "G5_NoLR",
+      "local_id": 11,
+      "anatomical_names": [
+        "inferior_vena_cava"
+      ]
+    },
+    {
+      "id": 117,
+      "name": "splenic_and_portal_vein",
+      "group": "G5_NoLR",
+      "local_id": 12,
+      "anatomical_names": [
+        "splenic_and_portal_vein"
+      ]
+    },
+    {
+      "id": 118,
+      "name": "pulmonary_vein",
+      "group": "G5_NoLR",
+      "local_id": 13,
+      "anatomical_names": [
+        "pulmonary_vein"
+      ]
+    },
+    {
+      "id": 119,
+      "name": "brainstem",
+      "group": "G6",
+      "local_id": 1,
+      "anatomical_names": [
+        "brainstem"
+      ]
+    },
+    {
+      "id": 120,
+      "name": "lens_left",
+      "group": "G6",
+      "local_id": 2,
+      "anatomical_names": [
+        "lens_left"
+      ]
+    },
+    {
+      "id": 121,
+      "name": "lens_right",
+      "group": "G6",
+      "local_id": 3,
+      "anatomical_names": [
+        "lens_right"
+      ]
+    },
+    {
+      "id": 122,
+      "name": "vitreous_body_left",
+      "group": "G6",
+      "local_id": 4,
+      "anatomical_names": [
+        "vitreous_body_left"
+      ]
+    },
+    {
+      "id": 123,
+      "name": "vitreous_body_right",
+      "group": "G6",
+      "local_id": 5,
+      "anatomical_names": [
+        "vitreous_body_right"
+      ]
+    },
+    {
+      "id": 124,
+      "name": "optic_nerve_left",
+      "group": "G6",
+      "local_id": 6,
+      "anatomical_names": [
+        "optic_nerve_left"
+      ]
+    },
+    {
+      "id": 125,
+      "name": "optic_nerve_right",
+      "group": "G6",
+      "local_id": 7,
+      "anatomical_names": [
+        "optic_nerve_right"
+      ]
+    },
+    {
+      "id": 126,
+      "name": "optic_chiasm",
+      "group": "G6",
+      "local_id": 8,
+      "anatomical_names": [
+        "optic_chiasm"
+      ]
+    },
+    {
+      "id": 127,
+      "name": "parotid_gland_left",
+      "group": "G6",
+      "local_id": 9,
+      "anatomical_names": [
+        "parotid_gland_left"
+      ]
+    },
+    {
+      "id": 128,
+      "name": "parotid_gland_right",
+      "group": "G6",
+      "local_id": 10,
+      "anatomical_names": [
+        "parotid_gland_right"
+      ]
+    },
+    {
+      "id": 129,
+      "name": "submandibular_gland_left",
+      "group": "G6",
+      "local_id": 11,
+      "anatomical_names": [
+        "submandibular_gland_left"
+      ]
+    },
+    {
+      "id": 130,
+      "name": "submandibular_gland_right",
+      "group": "G6",
+      "local_id": 12,
+      "anatomical_names": [
+        "submandibular_gland_right"
+      ]
+    },
+    {
+      "id": 131,
+      "name": "laryngeal_glottis",
+      "group": "G6",
+      "local_id": 13,
+      "anatomical_names": [
+        "laryngeal_glottis"
+      ]
+    },
+    {
+      "id": 132,
+      "name": "supraglottic_larynx",
+      "group": "G6",
+      "local_id": 14,
+      "anatomical_names": [
+        "supraglottic_larynx"
+      ]
+    },
+    {
+      "id": 133,
+      "name": "arytenoid_muscle",
+      "group": "G6",
+      "local_id": 15,
+      "anatomical_names": [
+        "arytenoid_muscle"
+      ]
+    },
+    {
+      "id": 134,
+      "name": "oral_cavity",
+      "group": "G6",
+      "local_id": 16,
+      "anatomical_names": [
+        "oral_cavity"
+      ]
+    },
+    {
+      "id": 135,
+      "name": "lips",
+      "group": "G6",
+      "local_id": 17,
+      "anatomical_names": [
+        "lips"
+      ]
+    },
+    {
+      "id": 136,
+      "name": "cricopharyngeal_inlet",
+      "group": "G6",
+      "local_id": 18,
+      "anatomical_names": [
+        "cricopharyngeal_inlet"
+      ]
+    },
+    {
+      "id": 137,
+      "name": "mandible",
+      "group": "G6",
+      "local_id": 19,
+      "anatomical_names": [
+        "mandible"
+      ]
+    },
+    {
+      "id": 138,
+      "name": "prostate_or_uterus",
+      "group": "G7",
+      "local_id": 1,
+      "anatomical_names": [
+        "prostate",
+        "uterus"
+      ]
+    },
+    {
+      "id": 139,
+      "name": "sternocleidomastoid_muscle_left",
+      "group": "G7",
+      "local_id": 2,
+      "anatomical_names": [
+        "sternocleidomastoid_muscle_left"
+      ]
+    },
+    {
+      "id": 140,
+      "name": "sternocleidomastoid_muscle_right",
+      "group": "G7",
+      "local_id": 3,
+      "anatomical_names": [
+        "sternocleidomastoid_muscle_right"
+      ]
+    },
+    {
+      "id": 141,
+      "name": "internal_jugular_vein_left",
+      "group": "G7",
+      "local_id": 4,
+      "anatomical_names": [
+        "internal_jugular_vein_left"
+      ]
+    },
+    {
+      "id": 142,
+      "name": "internal_jugular_vein_right",
+      "group": "G7",
+      "local_id": 5,
+      "anatomical_names": [
+        "internal_jugular_vein_right"
+      ]
+    },
+    {
+      "id": 143,
+      "name": "renal_vein_left",
+      "group": "G7",
+      "local_id": 6,
+      "anatomical_names": [
+        "renal_vein_left"
+      ]
+    },
+    {
+      "id": 144,
+      "name": "renal_vein_right",
+      "group": "G7",
+      "local_id": 7,
+      "anatomical_names": [
+        "renal_vein_right"
+      ]
+    },
+    {
+      "id": 145,
+      "name": "testis_left",
+      "group": "G7",
+      "local_id": 8,
+      "anatomical_names": [
+        "testis_left"
+      ]
+    },
+    {
+      "id": 146,
+      "name": "testis_right",
+      "group": "G7",
+      "local_id": 9,
+      "anatomical_names": [
+        "testis_right"
+      ]
+    }
+  ]
+}
